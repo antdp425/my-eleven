@@ -41,3 +41,16 @@ nav{
 .navItems a{
   margin: 0px 10px;
 }
+
+.lineup{
+  height: 500px;
+  margin: 15px 20px;
+  background-color: black;
+}
+
+@media all and (max-width: 768px) {
+  .lineup{
+    background-color: pink;
+    margin: 0;
+  }
+}

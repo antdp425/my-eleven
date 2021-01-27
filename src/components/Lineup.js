@@ -2,8 +2,8 @@ import React from 'react'
 
 function Lineup() {
    return (
-      <div>
-         
+      <div className="lineup">
+
       </div>
    )
 }
