@@ -43,9 +43,16 @@ nav{
 }
 
 .lineup{
-  height: 500px;
+  height: auto;
   margin: 15px 20px;
   background-color: black;
+}
+
+.player{
+  height: 50px;
+  width: 50px;
+  background-color: green;
+  position: relative;
 }
 
 @media all and (max-width: 768px) {
@@ -54,3 +61,4 @@ nav{
     margin: 0;
   }
 }
+

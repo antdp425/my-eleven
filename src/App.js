@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Lineup from './components/Lineup';
+import ActionBar from './components/ActionBar';
 
 function App() {
   const [lineup, setLineup] = useState([])
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Lineup />
+      <ActionBar />
     </div>
   );
 }

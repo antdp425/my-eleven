@@ -1,3 +1,7 @@
+# Introduction
+
+My Eleven is a tool that allows you to create and share your own football/soccer lineup(s). 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
