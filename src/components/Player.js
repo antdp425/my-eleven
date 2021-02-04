@@ -1,19 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
+import Draggable from "react-draggable";
 
 function Player({ index }) {
-  let playerRef = useRef();
-  let style = {position: "relative", zIndex: index}
-  
   return (
-    <div
-      style={{style}}
-      classNmae="playerContainer"
-      ref={playerRef}
-      onClick={() => (playerRef.current.style.top = "50px")}
-    >
-      <div className="player"></div>
-      <div className="playerName">Hi</div>
+    <Draggable>
+    <div className="player">
+      <div>icon</div>
+      <div>playername</div>
     </div>
+    </Draggable>
   );
 }
 
