@@ -1,3 +1,11 @@
+input[type=text]{
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
 nav{
   background-color: midnightblue;
   height: auto;
@@ -31,11 +39,15 @@ nav{
   position: absolute;
   display: block;
   text-align: center;
-  background-color: white;
+  color: white;
 }
 
 .goalie{
   color: lime
+}
+
+.outfield{
+  color: white
 }
 
 .actionBar{
