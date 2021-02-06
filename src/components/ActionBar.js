@@ -2,7 +2,7 @@ import React from 'react'
 
 function ActionBar() {
    return (
-      <div>
+      <div className="actionBar">
          Action Bar Here
       </div>
    )

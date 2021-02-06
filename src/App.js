@@ -5,8 +5,6 @@ import Lineup from './components/Lineup';
 import ActionBar from './components/ActionBar';
 
 function App() {
-  const [lineup, setLineup] = useState([])
-
   return (
     <div className="App">
       <Navbar />
