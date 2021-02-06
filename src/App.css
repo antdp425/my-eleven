@@ -26,11 +26,16 @@ nav{
 
 .player{
   height: 50px;
-  width: fit-content;
+  width: 100px;
   padding: 5px;
   position: absolute;
   display: block;
+  text-align: center;
   background-color: white;
+}
+
+.goalie{
+  color: lime
 }
 
 .actionBar{

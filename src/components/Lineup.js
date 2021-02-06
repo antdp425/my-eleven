@@ -4,7 +4,7 @@ import Player from './Player'
 function Lineup() {
    return (
       <div className="lineup">
-         <Player defaultPosition={{x:400,y:50}}/>
+         <Player goalie={true}defaultPosition={{x:400,y:50}}/>
          <Player defaultPosition={{x:175,y:150}}/>
          <Player defaultPosition={{x:325,y:150}}/>
          <Player defaultPosition={{x:475,y:150}}/>
