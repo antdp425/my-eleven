@@ -1,16 +1,31 @@
-import './App.css';
-import { useState } from 'react';
-import Navbar from './components/Navbar';
-import Lineup from './components/Lineup';
-import ActionBar from './components/ActionBar';
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Lineup from "./components/Lineup";
+import ActionBar from "./components/ActionBar";
+import Teams from "./components/Teams";
+import Settings from "./components/Settings";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Lineup />
-      <ActionBar />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/teams">
+          <Teams />
+        </Route>
+        <Route path="/settings">
+          <Settings />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

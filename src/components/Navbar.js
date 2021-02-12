@@ -1,17 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-   return (
+  return (
       <nav>
-         <div className="navLogo">
-            <a>My Eleven</a>
-         </div>
-         <div className="navItems">
-            <a>My Teams</a>
-            <a>Settings</a>
-         </div>
+        <div className="navLogo">
+          <Link to="/">My Eleven</Link>
+        </div>
+        <div className="navItems">
+          <Link to="/teams">My Teams</Link>
+          <Link to="/settings">Settings</Link>
+        </div>
       </nav>
-   )
+  );
 }
 
-export default Navbar
+export default Navbar;
