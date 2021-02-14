@@ -1,13 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Draggable from "react-draggable";
 
-function Player({ goalie, defaultPosition }) {
+function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray}) {
+  let [playerDetails, setPlayerDetails] = useState({playerName: "", playerIndex: playerIndex})
+
   let playerNameField = useRef();
   let focusOnTextField = () => playerNameField.current.select();
 
   let [playerName, setPlayerName] = useState();
   let handleChange = (e) => {
     setPlayerName(e.target.value);
+    setPlayerDetails(oldDetails => ({...oldDetails, playerName: e.target.value}))
+    updatePlayersArray(playerDetails)
   };
 
   return (
