@@ -17,7 +17,7 @@ function Player({ goalie, defaultPosition }) {
     >
       {!goalie ? (
         <div onClick={focusOnTextField} className="player">
-          <i class="outfield fas fa-tshirt fa-2x"></i>
+          <i class="outfield fas fa-tshirt fa-3x"></i>
           <input
             type="text"
             onChange={handleChange}
@@ -27,7 +27,7 @@ function Player({ goalie, defaultPosition }) {
         </div>
       ) : (
         <div onClick={focusOnTextField} className="player">
-          <i class="goalie fas fa-tshirt fa-2x"></i>
+          <i class="goalie fas fa-tshirt fa-3x"></i>
           <input
             type="text"
             onChange={handleChange}

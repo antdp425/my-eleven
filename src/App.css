@@ -4,6 +4,7 @@ input[type=text]{
   width: 100%;
   color: white;
   text-align: center;
+  font-size: 1.5em;
 }
 
 nav{
@@ -62,6 +63,7 @@ nav a{
   .lineup{
     background-color: pink;
     margin: 0;
+    width: auto;
   }
 }
 
