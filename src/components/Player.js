@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Draggable from "react-draggable";
 
-function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray}) {
+function Player({goalie, defaultPosition, playerIndex, updatePlayersArray}) {
   let [playerDetails, setPlayerDetails] = useState({playerName: "", playerIndex: playerIndex})
 
   let playerNameField = useRef();
@@ -10,7 +10,7 @@ function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray}) {
   let [playerName, setPlayerName] = useState();
   let handleChange = (e) => {
     setPlayerName(e.target.value);
-    setPlayerDetails(oldDetails => ({...oldDetails, playerName: e.target.value}))
+    setPlayerDetails({...playerDetails, playerName:e.target.value})
     updatePlayersArray(playerDetails)
   };
 
