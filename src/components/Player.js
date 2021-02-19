@@ -1,18 +1,34 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
 
-function Player({goalie, defaultPosition, playerIndex, updatePlayersArray}) {
-  let [playerDetails, setPlayerDetails] = useState({playerName: "", playerIndex: playerIndex})
-
+function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray }) {
   let playerNameField = useRef();
   let focusOnTextField = () => playerNameField.current.select();
 
   let [playerName, setPlayerName] = useState();
-  let handleChange = (e) => {
-    setPlayerName(e.target.value);
-    setPlayerDetails({...playerDetails, playerName:e.target.value})
-    updatePlayersArray(playerDetails)
+  let handleNameChange = (e) => {
+    let name = e.target.value;
+    setPlayerName(name);
   };
+  
+  useEffect(() => {
+    let playerData = JSON.parse(localStorage.getItem("playerData"))[
+      playerIndex
+    ];
+    if (playerData) {
+      setPlayerName(playerData.playerName);
+    }
+    console.log("Ran on mount")
+  }, []);
+
+  useEffect(() => {
+    let playerDetails = {
+      playerName: playerName,
+      playerIndex: playerIndex,
+    }
+    updatePlayersArray(playerDetails);
+    console.log("Updated player details")
+  },[playerName])
 
   return (
     <Draggable
@@ -24,7 +40,7 @@ function Player({goalie, defaultPosition, playerIndex, updatePlayersArray}) {
           <i class="outfield fas fa-tshirt fa-3x"></i>
           <input
             type="text"
-            onChange={handleChange}
+            onChange={handleNameChange}
             ref={playerNameField}
             value={playerName}
           />
@@ -34,7 +50,7 @@ function Player({goalie, defaultPosition, playerIndex, updatePlayersArray}) {
           <i class="goalie fas fa-tshirt fa-3x"></i>
           <input
             type="text"
-            onChange={handleChange}
+            onChange={handleNameChange}
             ref={playerNameField}
             value={playerName}
           />

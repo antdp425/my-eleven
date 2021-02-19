@@ -18,8 +18,8 @@ function Lineup() {
   },[players])
 
   const updatePlayersArray = (updatedPlayer) => {
+    console.log(updatedPlayer)
     let localPlayers = [...players];
-    console.log(localPlayers)
     localPlayers[updatedPlayer.playerIndex] = updatedPlayer;
     setPlayers([...localPlayers])
   };
