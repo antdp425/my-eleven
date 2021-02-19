@@ -17,16 +17,30 @@ function Lineup() {
 
   useEffect(() => {
     let playerData = localStorage.getItem("playerData");
+    let styleData = localStorage.getItem("styleData")
+
     if (playerData) {
       setPlayers(JSON.parse(playerData));
     } else {
       localStorage.setItem("playerData", JSON.stringify(players));
     }
+
+    if (styleData) {
+      setPlayers(JSON.parse(styleData));
+    } else {
+      localStorage.setItem("styleData", JSON.stringify(style));
+    }
+
+
   }, []);
 
   useEffect(() => {
     localStorage.setItem("playerData", JSON.stringify(players));
   }, [players]);
+
+  useEffect(() => {
+    localStorage.setItem("styleData", JSON.stringify(style));
+  }, [style]);
 
   const updatePlayersArray = (updatedPlayer) => {
     let localPlayers = [...players];
