@@ -9,10 +9,6 @@ function Lineup() {
     }
   );
 
-  let updateLineupStyle = (styleKey, styleValue) => {
-    setStyle(prevStyle => ({...prevStyle, [`${styleKey}`]: styleValue}) )
-  }
-
   let [players, setPlayers] = useState([]);
 
   useEffect(() => {
@@ -26,7 +22,7 @@ function Lineup() {
     }
 
     if (styleData) {
-      setPlayers(JSON.parse(styleData));
+      setStyle(JSON.parse(styleData));
     } else {
       localStorage.setItem("styleData", JSON.stringify(style));
     }
@@ -47,6 +43,10 @@ function Lineup() {
     localPlayers[updatedPlayer.playerIndex] = updatedPlayer;
     setPlayers([...localPlayers]);
   };
+
+  let updateLineupStyle = (styleKey, styleValue) => {
+    setStyle(prevStyle => ({...prevStyle, [`${styleKey}`]: styleValue}) )
+  }
 
   return (
     <>
