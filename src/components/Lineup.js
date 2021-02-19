@@ -9,8 +9,8 @@ function Lineup() {
     }
   );
 
-  let updateLineupStyle = (style) => {
-    setStyle(style)
+  let updateLineupStyle = (styleKey, styleValue) => {
+    setStyle(prevStyle => ({...prevStyle, [`${styleKey}`]: styleValue}) )
   }
 
   let [players, setPlayers] = useState([]);
