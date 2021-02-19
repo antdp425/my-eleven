@@ -10,7 +10,6 @@ function App() {
     <Router>
       <div className="App">
       <Navbar />
-      </div>
 
       <Switch>
         <Route exact path="/">
@@ -23,6 +22,7 @@ function App() {
           <Settings />
         </Route>
       </Switch>
+      </div>
     </Router>
   );
 }

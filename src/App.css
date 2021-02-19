@@ -31,8 +31,6 @@ nav a{
 
 .lineup{
   height: 600px;
-  width: 900px;
-  margin: 15px auto;
   position: relative;
   background-color: rgb(0, 70, 21);
 }
@@ -59,11 +57,18 @@ nav a{
   text-align: center;
 }
 
-@media all and (max-width: 768px) {
-  .lineup{
-    background-color: pink;
-    margin: 0;
-    width: auto;
-  }
+.home{
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+}
+
+.lineupStyle{
+  background-color: azure;
+  text-align: center;
+}
+
+.myPlayers{
+  background-color: aqua;
+  text-align: center;
 }
 

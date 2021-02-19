@@ -5,23 +5,22 @@ function Lineup() {
   let [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    let playerData = localStorage.getItem("playerData")
-    if (playerData){
-      setPlayers(JSON.parse(playerData))
+    let playerData = localStorage.getItem("playerData");
+    if (playerData) {
+      setPlayers(JSON.parse(playerData));
     } else {
-      localStorage.setItem("playerData", JSON.stringify(players))
+      localStorage.setItem("playerData", JSON.stringify(players));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("playerData", JSON.stringify(players))
-  },[players])
+    localStorage.setItem("playerData", JSON.stringify(players));
+  }, [players]);
 
   const updatePlayersArray = (updatedPlayer) => {
-    console.log(updatedPlayer)
     let localPlayers = [...players];
     localPlayers[updatedPlayer.playerIndex] = updatedPlayer;
-    setPlayers([...localPlayers])
+    setPlayers([...localPlayers]);
   };
 
   return (

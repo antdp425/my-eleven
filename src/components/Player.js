@@ -10,7 +10,7 @@ function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray }) {
     let name = e.target.value;
     setPlayerName(name);
   };
-  
+
   useEffect(() => {
     let playerData = JSON.parse(localStorage.getItem("playerData"))[
       playerIndex
@@ -18,22 +18,21 @@ function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray }) {
     if (playerData) {
       setPlayerName(playerData.playerName);
     }
-    console.log("Ran on mount")
   }, []);
 
   useEffect(() => {
     let playerDetails = {
       playerName: playerName,
       playerIndex: playerIndex,
-    }
+    };
     updatePlayersArray(playerDetails);
-    console.log("Updated player details")
-  },[playerName])
+  }, [playerName]);
 
   return (
     <Draggable
       defaultPosition={{ x: defaultPosition.x, y: defaultPosition.y }}
       bounds="parent"
+      onStart={(e) => console.log(e)}
     >
       {!goalie ? (
         <div onClick={focusOnTextField} className="player">

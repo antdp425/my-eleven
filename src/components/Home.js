@@ -1,15 +1,16 @@
-import React from 'react'
-import ActionBar from './ActionBar'
-import Lineup from './Lineup'
-
+import React from "react";
+import Lineup from "./Lineup";
+import LineupStyle from "./LineupStyle";
+import MyPlayers from "./MyPlayers";
 
 function Home() {
-   return (
-      <>
-         <Lineup />
-         <ActionBar />
-      </>
-   )
+  return (
+    <div className="home">
+      <LineupStyle />
+      <Lineup />
+      <MyPlayers />
+    </div>
+  );
 }
 
-export default Home
+export default Home;
