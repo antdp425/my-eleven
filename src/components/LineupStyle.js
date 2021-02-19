@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import BackgroundColorpicker from './BackgroundColorpicker'
 
-function LineupStyle() {
+function LineupStyle({updateLineupStyle}) {
    return (
       <div className="lineupStyle">
-         <p>LineupStyle</p>
+      <div>
+         <div>Background Color</div>
+         <BackgroundColorpicker />
+      </div>
       </div>
    )
 }
