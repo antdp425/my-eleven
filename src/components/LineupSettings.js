@@ -1,7 +1,8 @@
 import React from "react";
 import ColorSquare from "./ColorSquare";
+import {formations} from '../formations'
 
-function LineupStyle({ updateLineupStyle }) {
+function LineupSettings({ updateLineupStyle }) {
 
   let colors = [
     { backgroundColor: "#003399" },
@@ -26,4 +27,4 @@ function LineupStyle({ updateLineupStyle }) {
   );
 }
 
-export default LineupStyle;
+export default LineupSettings;

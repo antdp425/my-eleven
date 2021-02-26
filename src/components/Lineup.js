@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import LineupStyle from "./LineupStyle";
+import LineupSettings from "./LineupSettings"
 import Player from "./Player";
+import {formations} from "../formations"
 
 function Lineup() {
   let [style, setStyle] = useState(
     JSON.parse(localStorage.getItem("lineupStyle")) || {
       backgroundColor: "rgb(0, 70, 21)",
+      formation: "433"
     }
   );
 
@@ -13,7 +15,7 @@ function Lineup() {
 
   useEffect(() => {
     let playerData = localStorage.getItem("playerData");
-    let styleData = localStorage.getItem("styleData")
+    let styleData = localStorage.getItem("styleData");
 
     if (playerData) {
       setPlayers(JSON.parse(playerData));
@@ -26,8 +28,6 @@ function Lineup() {
     } else {
       localStorage.setItem("styleData", JSON.stringify(style));
     }
-
-
   }, []);
 
   useEffect(() => {
@@ -45,68 +45,68 @@ function Lineup() {
   };
 
   let updateLineupStyle = (styleKey, styleValue) => {
-    setStyle(prevStyle => ({...prevStyle, [`${styleKey}`]: styleValue}) )
-  }
+    setStyle((prevStyle) => ({ ...prevStyle, [`${styleKey}`]: styleValue }));
+  };
 
   return (
     <>
-      <LineupStyle updateLineupStyle={updateLineupStyle}/>
+      <LineupSettings updateLineupStyle={updateLineupStyle} />
       <div style={style} className="lineup">
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={0}
           goalie={true}
-          defaultPosition={{ x: 400, y: 50 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[0]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={1}
-          defaultPosition={{ x: 175, y: 150 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[1]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={2}
-          defaultPosition={{ x: 325, y: 150 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[2]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={3}
-          defaultPosition={{ x: 475, y: 150 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[3]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={4}
-          defaultPosition={{ x: 625, y: 150 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[4]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={5}
-          defaultPosition={{ x: 250, y: 250 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[5]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={6}
-          defaultPosition={{ x: 400, y: 250 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[6]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={7}
-          defaultPosition={{ x: 550, y: 250 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[7]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={8}
-          defaultPosition={{ x: 250, y: 350 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[8]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={9}
-          defaultPosition={{ x: 400, y: 350 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[9]}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={10}
-          defaultPosition={{ x: 550, y: 350 }}
+          defaultPosition={formations()[`${style.formation}`].defaultPositions[10]}
         />
       </div>
     </>
