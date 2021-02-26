@@ -11,20 +11,19 @@ function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray }) {
     setPlayerName(name);
   };
 
+  let playerDetails = {
+    playerName,
+    playerIndex,
+  };
+
   useEffect(() => {
-    let playerData = JSON.parse(localStorage.getItem("playerData"))[
-      playerIndex
-    ];
-    if (playerData) {
-      setPlayerName(playerData.playerName);
+    let playerData = JSON.parse(localStorage.getItem("playerData"));
+    if (playerData && playerData[playerIndex]) {
+      setPlayerName(playerData[playerIndex].playerName);
     }
   }, []);
 
   useEffect(() => {
-    let playerDetails = {
-      playerName: playerName,
-      playerIndex: playerIndex,
-    };
     updatePlayersArray(playerDetails);
   }, [playerName]);
 
