@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
+import formations from "../formations"
 
-function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray }) {
+
+function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
   let playerNameField = useRef();
   let focusOnTextField = () => playerNameField.current.select();
 
@@ -17,6 +19,7 @@ function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray }) {
   };
 
   useEffect(() => {
+    console.log("I was mounted")
     let playerData = JSON.parse(localStorage.getItem("playerData"));
     if (playerData && playerData[playerIndex]) {
       setPlayerName(playerData[playerIndex].playerName);
@@ -27,11 +30,16 @@ function Player({ goalie, defaultPosition, playerIndex, updatePlayersArray }) {
     updatePlayersArray(playerDetails);
   }, [playerName]);
 
+  useEffect(() => {
+    setDefaultPosition(formations[formation].defaultPositions[playerIndex])
+  }, [formation])
+
+  let [defaultPosition, setDefaultPosition] = useState(formations[formation].defaultPositions[playerIndex])
+
   return (
     <Draggable
-      defaultPosition={{ x: defaultPosition.x, y: defaultPosition.y }}
+      defaultPosition={defaultPosition}
       bounds="parent"
-      onStart={(e) => console.log(e)}
     >
       {!goalie ? (
         <div onClick={focusOnTextField} className="player">

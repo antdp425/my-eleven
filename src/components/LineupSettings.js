@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ColorSquare from "./ColorSquare";
-import { formations } from "../formations";
-import FormationSelector from "./FormationSelector";
+import formations from "../formations";
 
 function LineupSettings({ updateLineupStyle }) {
   let colors = [
@@ -17,21 +16,29 @@ function LineupSettings({ updateLineupStyle }) {
     );
   });
 
-  let formation = Object.keys(formations()).map((formation) => (
-    <select>
-      <FormationSelector
-        formation={formation}
-        updateLineupStyle={updateLineupStyle}
-      />
-    </select>
+  let formationOptions = Object.keys(formations).map((formation) => (
+    <option value={`${formation}`}>{formation.split("").join("-")}</option>
   ));
+
+  let handleFormationChange = (event) => {
+    let formationValue = event.target.value;
+    return formationValue
+      ? updateLineupStyle("formation", event.target.value)
+      : null;
+  };
 
   return (
     <div className="lineupStyle">
       <div>
         <div>Background Color</div>
         <div className="colors">{colors}</div>
-        {formation}
+        <div>Formation</div>
+        <select onChange={handleFormationChange}>
+          <option value="" selected >
+            --- Select Formation or Drag Players ----
+          </option>
+          {formationOptions}
+        </select>
       </div>
     </div>
   );
