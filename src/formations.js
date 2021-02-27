@@ -1,4 +1,4 @@
-export function formations() {
+export function formations(){
   return {
     433: {
       defaultPositions: [
@@ -13,6 +13,21 @@ export function formations() {
         { x: 250, y: 350 },
         { x: 400, y: 350 },
         { x: 550, y: 350 },
+      ],
+    },
+    442: {
+      defaultPositions: [
+        { x: 400, y: 50 },
+        { x: 175, y: 150 },
+        { x: 325, y: 150 },
+        { x: 475, y: 150 },
+        { x: 625, y: 150 },
+        { x: 175, y: 250 },
+        { x: 325, y: 250 },
+        { x: 475, y: 250 },
+        { x: 625, y: 250 },
+        { x: 325, y: 350 },
+        { x: 475, y: 350 },
       ],
     },
   };
