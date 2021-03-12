@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import LineupSettings from "./LineupSettings";
 import Player from "./Player";
 

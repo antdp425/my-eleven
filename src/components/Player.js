@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
-import formations from "../formations"
-
+import formations from "../formations";
 
 function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
   let playerNameField = useRef();
@@ -12,6 +11,10 @@ function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
     let name = e.target.value;
     setPlayerName(name);
   };
+
+  let [position, setPosition] = useState(
+    formations[formation].defaultPositions[playerIndex]
+  );
 
   let playerDetails = {
     playerName,
@@ -29,18 +32,12 @@ function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
     updatePlayersArray(playerDetails);
   }, [playerName]);
 
-  let [defaultPosition, setDefaultPosition] = useState(formations[formation].defaultPositions[playerIndex])
-
   useEffect(() => {
-    setDefaultPosition(formations[formation].defaultPositions[playerIndex])
-  }, [])
-
+    setPosition(formations[formation].defaultPositions[playerIndex]);
+  }, [formation]);
 
   return (
-    <Draggable
-      defaultPosition={defaultPosition}
-      bounds="parent"
-    >
+    <Draggable position={position} bounds="parent">
       {!goalie ? (
         <div onClick={focusOnTextField} className="player">
           <i class="outfield fas fa-tshirt fa-3x"></i>
