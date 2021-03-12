@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-import LineupSettings from "./LineupSettings"
+import LineupSettings from "./LineupSettings";
 import Player from "./Player";
 
 function Lineup() {
   let [style, setStyle] = useState(
     JSON.parse(localStorage.getItem("lineupStyle")) || {
       backgroundColor: "rgb(0, 70, 21)",
-      formation: "433"
     }
+  );
+
+  let [formation, setFormation] = useState(
+    localStorage.getItem("formation") || "433"
   );
 
   let [players, setPlayers] = useState([]);
@@ -15,6 +18,7 @@ function Lineup() {
   useEffect(() => {
     let playerData = localStorage.getItem("playerData");
     let styleData = localStorage.getItem("lineupStyle");
+    let formationData = localStorage.getItem("formation");
 
     if (playerData) {
       setPlayers(JSON.parse(playerData));
@@ -27,6 +31,12 @@ function Lineup() {
     } else {
       localStorage.setItem("lineupStyle", JSON.stringify(style));
     }
+
+    if (formationData) {
+      setFormation(formationData);
+    } else {
+      localStorage.setItem("formation", formation);
+    }
   }, []);
 
   useEffect(() => {
@@ -35,7 +45,11 @@ function Lineup() {
 
   useEffect(() => {
     localStorage.setItem("lineupStyle", JSON.stringify(style));
-  }, [style.formation, style.backgroundColor]);
+  }, [style]);
+
+  useEffect(() => {
+    localStorage.setItem("formation", formation);
+  }, [formation]);
 
   const updatePlayersArray = (updatedPlayer) => {
     let localPlayers = [...players];
@@ -47,65 +61,72 @@ function Lineup() {
     setStyle((prevStyle) => ({ ...prevStyle, [`${styleKey}`]: styleValue }));
   };
 
+  let updateFormation = (formation) => {
+    setFormation(formation);
+  };
+
   return (
     <>
-      <LineupSettings updateLineupStyle={updateLineupStyle} />
+      <LineupSettings
+        updateLineupStyle={updateLineupStyle}
+        updateFormation={updateFormation}
+      />
       <div style={style} className="lineup">
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={0}
           goalie={true}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={1}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={2}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={3}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={4}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={5}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={6}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={7}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={8}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={9}
-          formation={style.formation}
+          formation={formation}
         />
         <Player
           updatePlayersArray={updatePlayersArray}
           playerIndex={10}
-          formation={style.formation}
+          formation={formation}
         />
       </div>
     </>

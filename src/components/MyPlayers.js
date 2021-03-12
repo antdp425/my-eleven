@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function MyPlayers() {
-   return (
-      <div className="myPlayers">
-         <p>My Players</p>
-      </div>
-   )
+  return (
+    <div className="myPlayers">
+      <p>My Players</p>
+    </div>
+  );
 }
 
-export default MyPlayers
+export default MyPlayers;

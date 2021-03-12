@@ -19,7 +19,6 @@ function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
   };
 
   useEffect(() => {
-    console.log("I was mounted")
     let playerData = JSON.parse(localStorage.getItem("playerData"));
     if (playerData && playerData[playerIndex]) {
       setPlayerName(playerData[playerIndex].playerName);
@@ -30,11 +29,12 @@ function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
     updatePlayersArray(playerDetails);
   }, [playerName]);
 
+  let [defaultPosition, setDefaultPosition] = useState(formations[formation].defaultPositions[playerIndex])
+
   useEffect(() => {
     setDefaultPosition(formations[formation].defaultPositions[playerIndex])
-  }, [formation])
+  }, [])
 
-  let [defaultPosition, setDefaultPosition] = useState(formations[formation].defaultPositions[playerIndex])
 
   return (
     <Draggable

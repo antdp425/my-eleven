@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ColorSquare from "./ColorSquare";
 import formations from "../formations";
 
-function LineupSettings({ updateLineupStyle }) {
+function LineupSettings({ updateLineupStyle, updateFormation }) {
   let colors = [
     { backgroundColor: "#003399" },
     { backgroundColor: "#4d0099" },
@@ -23,7 +23,7 @@ function LineupSettings({ updateLineupStyle }) {
   let handleFormationChange = (event) => {
     let formationValue = event.target.value;
     return formationValue
-      ? updateLineupStyle("formation", event.target.value)
+      ? updateFormation(event.target.value)
       : null;
   };
 
