@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
 import formations from "../formations";
 
-function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
+function FieldPlayer({ formation, goalie, playerIndex, updatePlayersArray }) {
   let playerNameField = useRef();
   let focusOnTextField = () => playerNameField.current.select();
 
@@ -63,4 +63,4 @@ function Player({ formation, goalie, playerIndex, updatePlayersArray }) {
   );
 }
 
-export default Player;
+export default FieldPlayer;

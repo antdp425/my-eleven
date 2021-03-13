@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import LineupSettings from "./LineupSettings";
-import Player from "./Player";
+import FieldPlayer from "./FieldPlayer";
 
 function Lineup() {
   let [style, setStyle] = useState(
@@ -72,58 +72,58 @@ function Lineup() {
         updateFormation={updateFormation}
       />
       <div style={style} className="lineup">
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={0}
           goalie={true}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={1}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={2}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={3}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={4}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={5}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={6}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={7}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={8}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={9}
           formation={formation}
         />
-        <Player
+        <FieldPlayer
           updatePlayersArray={updatePlayersArray}
           playerIndex={10}
           formation={formation}

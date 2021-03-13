@@ -1,11 +1,12 @@
 import "./App.css";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Teams from "./components/Teams";
 import Settings from "./components/Settings";
 import Home from "./components/Home";
 
 function App() {
+
   return (
     <Router>
       <div className="App">
