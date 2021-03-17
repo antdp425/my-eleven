@@ -64,7 +64,9 @@ function MyPlayers() {
           <button type="submit">Add</button>
         </form>
       </div>
+      <div className="playerList">
       {myPlayers}
+      </div>
     </div>
   );
 }
