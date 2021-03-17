@@ -83,3 +83,8 @@ nav a{
   height: 50px;
 }
 
+.playerName{
+  display: block;
+  padding: 5px;
+}
+

@@ -1,10 +1,10 @@
 import React from 'react'
 
-function PlayerName() {
+function PlayerName({player}) {
    return (
-      <div>
-         
-      </div>
+      <span className="playerName">
+         {player.name}
+      </span>
    )
 }
 

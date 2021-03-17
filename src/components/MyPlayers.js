@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PlayerName from "./PlayerName"
 
 function MyPlayers() {
   let [myPlayers, setMyPlayers] = useState("Loading...");
@@ -8,7 +9,7 @@ function MyPlayers() {
       .then((resp) => resp.json())
       .then((data) =>
         setMyPlayers(
-          data.map((player) => <p key={`player_${player.id}`}>{player.name}</p>)
+          data.map((player) => <PlayerName key={`player_${player.id}`} player={player} />)
         )
       );
   };
