@@ -1,4 +1,4 @@
-input[type=text]{
+.player input[type=text]{
   background-color: transparent;
   border: none;
   width: 100%;
@@ -70,7 +70,17 @@ nav a{
 .myPlayers{
   background-color: aqua;
   text-align: center;
+  max-height: 600px;
+  overflow-y: auto;
 }
+
+.myPlayersForm{
+  position: sticky;
+  top: 0;
+  background-color: aqua;
+  padding: 10px 0px;
+}
+
 
 .colors{
   display: flex;
