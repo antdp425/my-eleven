@@ -5,13 +5,17 @@ function MyPlayers() {
   let [myPlayers, setMyPlayers] = useState("Loading...");
   let [newPlayer, setNewPlayer] = useState("");
 
+  let updatePlayerList = (id) => {
+    fetchPlayers()
+  }
+
   let fetchPlayers = () => {
     fetch("https://my-eleven-api.herokuapp.com/players")
       .then((resp) => resp.json())
       .then((data) =>
         setMyPlayers(
           data.map((player) => (
-            <PlayerName key={`player_${player.id}`} player={player} />
+            <PlayerName updatePlayerList={updatePlayerList} key={`player_${player.id}`} player={player} />
           ))
         )
       );
@@ -39,7 +43,7 @@ function MyPlayers() {
           if (data.id) {
             setMyPlayers([
               ...myPlayers,
-              <PlayerName key={`player_${data.id}`} player={player} />,
+              <PlayerName updatePlayerList={updatePlayerList} key={`player_${data.id}`} player={data} />,
             ]);
             setNewPlayer("");
           }

@@ -98,7 +98,8 @@ nav a{
 }
 
 .playerName{
-  display: block;
   padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
