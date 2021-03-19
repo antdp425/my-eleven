@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import ColorSquare from "./ColorSquare";
+import React from "react";
+import FieldColorSquare from "./FieldColorSquare";
 import formations from "../formations";
 
 function LineupSettings({ updateLineupStyle, updateFormation }) {
   let colors = [
+    { backgroundColor: "rgb(0, 70, 21)"},
     { backgroundColor: "#003399" },
     { backgroundColor: "#4d0099" },
     { backgroundColor: "#990000" },
   ].map((color) => {
     return (
-      <ColorSquare
+      <FieldColorSquare
         key={`color_${color.backgroundColor}`}
         updateLineupStyle={updateLineupStyle}
         color={color.backgroundColor}

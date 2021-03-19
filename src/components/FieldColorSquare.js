@@ -1,6 +1,6 @@
 import React from "react";
 
-function ColorSquare({ color, updateLineupStyle}) {
+function FieldColorSquare({ color, updateLineupStyle}) {
   return (
     <div
       onClick={() => updateLineupStyle("backgroundColor", color)}
@@ -10,4 +10,4 @@ function ColorSquare({ color, updateLineupStyle}) {
   );
 }
 
-export default ColorSquare;
+export default FieldColorSquare;
