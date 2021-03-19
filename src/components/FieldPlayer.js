@@ -40,7 +40,7 @@ function FieldPlayer({ formation, goalie, playerIndex, updatePlayersArray }) {
     <Draggable position={position} bounds="parent">
       {!goalie ? (
         <div onClick={focusOnTextField} className="player">
-          <i class="outfield fas fa-tshirt fa-3x"></i>
+          <i className="outfield fas fa-tshirt fa-3x"></i>
           <input
             type="text"
             onChange={handleNameChange}
@@ -50,7 +50,7 @@ function FieldPlayer({ formation, goalie, playerIndex, updatePlayersArray }) {
         </div>
       ) : (
         <div onClick={focusOnTextField} className="player">
-          <i class="goalie fas fa-tshirt fa-3x"></i>
+          <i className="goalie fas fa-tshirt fa-3x"></i>
           <input
             type="text"
             onChange={handleNameChange}

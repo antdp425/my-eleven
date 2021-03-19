@@ -10,6 +10,7 @@ function LineupSettings({ updateLineupStyle, updateFormation }) {
   ].map((color) => {
     return (
       <ColorSquare
+        key={`color_${color.backgroundColor}`}
         updateLineupStyle={updateLineupStyle}
         color={color.backgroundColor}
       />
@@ -17,7 +18,7 @@ function LineupSettings({ updateLineupStyle, updateFormation }) {
   });
 
   let formationOptions = Object.keys(formations).map((formation) => (
-    <option value={`${formation}`}>{formation.split("").join("-")}</option>
+    <option key={`option_${formation}`} value={`${formation}`}>{formation.split("").join("-")}</option>
   ));
 
   let handleFormationChange = (event) => {
@@ -35,7 +36,7 @@ function LineupSettings({ updateLineupStyle, updateFormation }) {
         <div>Formation</div>
         <select onChange={handleFormationChange}>
           <option value="" selected >
-            --- Select Formation or Drag Players ----
+            --- Select Formation ----
           </option>
           {formationOptions}
         </select>
