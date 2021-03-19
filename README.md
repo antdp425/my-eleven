@@ -6,6 +6,7 @@ My Eleven is an app that allows you to create and share your own football/soccer
 
 It was inspired by the following apps:
 [LINEUP11](http://lineup11.footplr.com/)
+
 [BuildLineup](https://www.buildlineup.com/)
 
 # Features
