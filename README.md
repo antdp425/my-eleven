@@ -1,6 +1,24 @@
 # Introduction
 
-My Eleven is a tool that allows you to create and share your own football/soccer lineup(s). 
+[Live Demo](https://my-eleven.netlify.app) -- (Not currently optimized for mobile)
+
+My Eleven is an app that allows you to create and share your own football/soccer lineup(s). 
+
+It was inspired by the following apps:
+[LINEUP11](http://lineup11.footplr.com/)
+[BuildLineup](https://www.buildlineup.com/)
+
+# Features
+
+- Customize Field Color and Formation
+- Edit Player Names on the Field
+- Save Players for future use -- Not fully functional yet
+
+## Coming Soon
+
+- Customize Kit Colors
+- Quickly Add Players to Field from My Players
+- Create / Save Teams
 
 # Getting Started with Create React App
 
